@@ -1,0 +1,17 @@
+# credentials — never commit these
+.env
+session_tridi.session
+session_tridi.session-journal
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# database (local only)
+database/signals.db
+
+# Streamlit
+.streamlit/credentials.toml

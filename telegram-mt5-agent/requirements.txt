@@ -1,0 +1,10 @@
+telethon>=1.36.0
+MetaTrader5>=5.0.45
+anthropic>=0.40.0
+streamlit>=1.40.0
+pandas>=2.2.0
+plotly>=5.24.0
+python-dotenv>=1.0.0
+aiosqlite>=0.20.0
+asyncio-throttle>=1.0.2
+langdetect>=1.0.9
