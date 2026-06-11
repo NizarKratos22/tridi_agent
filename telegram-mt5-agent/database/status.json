@@ -1,0 +1,12 @@
+{
+  "mt5": {
+    "ok": true,
+    "detail": "Balance: 3001.33 | Equity: 3004.05",
+    "ts": "2026-06-11T18:02:09.286955+00:00"
+  },
+  "telegram": {
+    "ok": true,
+    "detail": "[NEW_SIGNAL] BUY XAUUSD from @ForexAuPro1",
+    "ts": "2026-06-11T17:35:04.281704+00:00"
+  }
+}

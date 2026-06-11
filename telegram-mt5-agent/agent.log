@@ -1,0 +1,1264 @@
+14:02:36  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+14:02:36  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+14:02:38  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3000.00 USD
+14:02:38  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+14:02:38  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+14:02:39  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab']
+14:09:05  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+14:09:05  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+14:09:06  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3000.00 USD
+14:09:06  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+14:09:06  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+Traceback (most recent call last):
+  File "C:\Users\nizar\Desktop\ai projects\tridi\telegram-mt5-agent\main.py", line 61, in <module>
+    asyncio.run(main(mode))
+  File "C:\Users\nizar\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\nizar\AppData\Local\Programs\Python\Python311\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nizar\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\nizar\Desktop\ai projects\tridi\telegram-mt5-agent\main.py", line 45, in main
+    await tg.start()
+  File "C:\Users\nizar\Desktop\ai projects\tridi\telegram-mt5-agent\agents\telegram_agent.py", line 54, in start
+    await self.client.start(phone=self.phone)
+  File "C:\Users\nizar\AppData\Local\Programs\Python\Python311\Lib\site-packages\telethon\client\auth.py", line 135, in _start
+    await self.connect()
+  File "C:\Users\nizar\AppData\Local\Programs\Python\Python311\Lib\site-packages\telethon\client\telegrambaseclient.py", line 563, in connect
+    self.session.auth_key = self._sender.auth_key
+    ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nizar\AppData\Local\Programs\Python\Python311\Lib\site-packages\telethon\sessions\sqlite.py", line 180, in auth_key
+    self._update_session_table()
+  File "C:\Users\nizar\AppData\Local\Programs\Python\Python311\Lib\site-packages\telethon\sessions\sqlite.py", line 194, in _update_session_table
+    c.execute('delete from sessions')
+sqlite3.OperationalError: database is locked
+14:38:52  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+14:38:52  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+14:38:53  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3000.00 USD
+14:38:53  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+14:38:53  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+14:38:54  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860']
+14:51:55  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+14:54:54  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+14:54:54  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+14:54:54  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+14:55:08  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+14:55:08  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+14:55:08  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+14:56:02  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 1236] The network connection was aborted by the local system
+14:56:02  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 1236] The network connection was aborted by the local system
+14:56:02  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+14:56:02  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+14:56:02  INFO      telethon.network.connection.connection — <class 'ConnectionAbortedError'> during disconnect: [WinError 1236] The network connection was aborted by the local system
+14:56:02  WARNING   telethon.network.mtprotosender — Attempt 1 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+14:56:03  WARNING   telethon.network.mtprotosender — Attempt 2 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+14:56:04  WARNING   telethon.network.mtprotosender — Attempt 3 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+14:56:05  WARNING   telethon.network.mtprotosender — Attempt 4 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+14:56:06  WARNING   telethon.network.mtprotosender — Attempt 5 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+14:56:11  WARNING   telethon.network.mtprotosender — Attempt 6 at connecting failed: ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+14:56:12  INFO      telethon.network.mtprotosender — Failed reconnection attempt 1 with ConnectionError
+14:56:13  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+14:56:13  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+14:56:22  INFO      telethon.client.updates — Got difference for channel 2163272510 updates
+14:59:54  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:01:54  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:02:54  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:02:54  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+15:02:54  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+15:02:54  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+15:02:55  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+15:02:55  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+15:02:55  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:02:55  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:02:55  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+15:02:55  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:02:55  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:03:42  INFO      telethon.client.updates — Got difference for channel 2166967422 updates
+15:03:42  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:03:42  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:03:52  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+15:03:52  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+15:03:52  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+15:05:55  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+15:06:57  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+15:14:55  INFO      agents.telegram_agent — [Goldscalper7860 | english | UPDATE] rule-parsed (update) — None None
+15:14:55  INFO      agents.trade_executor — [Goldscalper7860] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:14:55  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:21:56  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:23:54  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+15:23:54  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+15:39:03  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+15:39:03  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+15:39:03  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:39:04  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+15:39:04  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+15:39:04  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+15:39:04  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:39:04  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+15:39:04  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:39:04  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:39:04  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+15:39:04  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:39:04  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:39:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:39:04  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 1236] The network connection was aborted by the local system
+15:39:04  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 1236] The network connection was aborted by the local system
+15:39:04  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+15:39:04  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+15:39:04  INFO      telethon.network.connection.connection — <class 'ConnectionAbortedError'> during disconnect: [WinError 1236] The network connection was aborted by the local system
+15:39:04  WARNING   telethon.network.mtprotosender — Attempt 1 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+15:39:05  WARNING   telethon.network.mtprotosender — Attempt 2 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+15:39:06  WARNING   telethon.network.mtprotosender — Attempt 3 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+15:39:07  WARNING   telethon.network.mtprotosender — Attempt 4 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+16:11:32  WARNING   telethon.network.mtprotosender — Attempt 5 at connecting failed: OSError: [WinError 1232] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+16:11:33  WARNING   telethon.network.mtprotosender — Attempt 6 at connecting failed: OSError: [WinError 1231] The network location cannot be reached. For information about network troubleshooting, see Windows Help
+16:11:34  INFO      telethon.network.mtprotosender — Failed reconnection attempt 1 with ConnectionError
+16:11:35  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+16:11:45  WARNING   telethon.network.mtprotosender — Attempt 1 at connecting failed: TimeoutError: 
+16:11:56  WARNING   telethon.network.mtprotosender — Attempt 2 at connecting failed: TimeoutError: 
+16:12:02  WARNING   telethon.network.mtprotosender — Attempt 3 at connecting failed: ConnectionAbortedError: [WinError 1236] The network connection was aborted by the local system
+16:12:03  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+16:12:03  WARNING   telethon.network.mtprotosender — Security error while unpacking a received message: Server replied with a wrong session ID (see FAQ for details)
+16:12:03  WARNING   telethon.network.mtprotostate — Server resent the older message 7649413737901207553, ignoring
+16:12:04  INFO      telethon.client.updates — Got difference for channel 1781480731 updates
+16:12:04  INFO      telethon.client.updates — Got difference for channel 2566251163 updates
+16:12:04  INFO      telethon.client.updates — Got difference for channel 2391911584 updates
+16:12:05  INFO      telethon.client.updates — Got difference for channel 2206862381 updates
+16:12:05  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:05  INFO      telethon.client.updates — Got difference for channel 2163272510 updates
+16:12:05  INFO      telethon.client.updates — Got difference for channel 1502638425 updates
+16:12:06  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:06  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:06  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:06  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:06  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:06  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:06  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+16:12:07  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+16:12:07  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+16:12:07  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+16:12:07  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:12:07  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:12:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:12:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:27:04  INFO      telethon.client.updates — Got difference for channel 1553353663 updates
+16:32:32  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:32:32  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:32:32  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+16:36:33  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+16:36:33  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:33  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:36:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:36:34  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:36:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:36:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:36:34  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:38:33  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:42:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:43:33  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:44:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:44:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:44:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:44:33  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:44:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:44:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:44:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:45:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — SELL None
+16:45:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=SELL  note=rule-parsed (update)
+16:45:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:45:33  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:45:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:45:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:45:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:48:33  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+16:48:33  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+16:48:33  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+16:50:52  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 121] The semaphore timeout period has expired
+16:50:52  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 121] The semaphore timeout period has expired
+16:50:52  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+16:50:52  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+16:50:52  INFO      telethon.network.connection.connection — <class 'OSError'> during disconnect: [WinError 121] The semaphore timeout period has expired
+16:50:52  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+16:52:33  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:52:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:52:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:52:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:57:08  INFO      telethon.client.updates — Got difference for channel 2166967422 updates
+16:58:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+16:58:33  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+16:58:33  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+16:59:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+16:59:33  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+16:59:33  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+16:59:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:59:33  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:59:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:59:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:59:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:00:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:00:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:00:34  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:00:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:01:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:01:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:01:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:01:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:01:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:01:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:02:34  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:02:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:06:34  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:09:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:09:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:09:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:33  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:13:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:33  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:13:33  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:13:33  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+17:13:33  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:13:33  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:33  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:13:34  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:13:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:13:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:13:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:20:34  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:21:34  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:21:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:21:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:21:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:22:34  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:25:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:25:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:25:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:41:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:41:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:41:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:42:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:42:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:42:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:43:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:43:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:43:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:45:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:45:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:45:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:45:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:48:35  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:56:34  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:56:34  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:56:34  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:57:05  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:12:05  INFO      telethon.client.updates — Got difference for channel 1781480731 updates
+10:56:30  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 121] The semaphore timeout period has expired
+10:56:30  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 121] The semaphore timeout period has expired
+10:56:30  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+10:56:30  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+10:56:30  INFO      telethon.network.connection.connection — <class 'OSError'> during disconnect: [WinError 121] The semaphore timeout period has expired
+10:56:30  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+10:56:30  WARNING   telethon.network.mtprotostate — Server resent the older message 7649703504459086849, ignoring
+10:56:33  INFO      telethon.client.updates — Got difference for channel 2431328521 updates
+10:56:33  INFO      telethon.client.updates — Got difference for channel 2566251163 updates
+10:56:35  INFO      telethon.client.updates — Got difference for channel 1781480731 updates
+10:56:36  INFO      telethon.client.updates — Got difference for channel 2391911584 updates
+10:56:36  INFO      telethon.client.updates — Got difference for channel 2206862381 updates
+10:56:36  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+10:56:36  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+10:56:36  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+10:56:36  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+10:56:36  INFO      telethon.client.updates — Got difference for channel 2163272510 updates
+10:56:37  INFO      telethon.client.updates — Got difference for channel 1553353663 updates
+10:56:37  INFO      telethon.client.updates — Got difference for channel 1502638425 updates
+10:56:37  INFO      telethon.client.updates — Got difference for channel 1313959269 updates
+10:56:38  INFO      telethon.client.updates — Got difference for channel 2166967422 updates
+10:56:38  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+10:56:38  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — None XAUUSD
+10:56:38  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=None  note=rule-parsed (new_signal)
+10:56:38  WARNING   agents.trade_executor — open_trade: bad symbol/action — XAUUSD 
+10:56:38  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:38  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:38  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:38  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:38  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:38  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:38  INFO      agents.telegram_agent — [Goldscalper7860 | english | UPDATE] rule-parsed (update) — None None
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+10:56:39  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+10:56:39  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+10:56:39  INFO      agents.telegram_agent — [Goldscalper7860 | english | UPDATE] rule-parsed (update) — None None
+10:56:39  INFO      agents.trade_executor — [Goldscalper7860] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+10:56:39  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+10:58:20  INFO      telethon.client.updates — Got difference for channel 2566251163 updates
+11:26:31  INFO      telethon.client.updates — Got difference for account updates
+11:39:11  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:01:37  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 121] The semaphore timeout period has expired
+12:01:37  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 121] The semaphore timeout period has expired
+12:01:37  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+12:01:37  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+12:01:37  INFO      telethon.network.connection.connection — <class 'OSError'> during disconnect: [WinError 121] The semaphore timeout period has expired
+12:01:37  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+12:10:12  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — None None
+12:10:12  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+12:10:12  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+12:11:37  INFO      telethon.client.updates — Got difference for channel 1553353663 updates
+12:11:47  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:11:47  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:11:47  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+12:13:12  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:13:12  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:13:12  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+12:13:12  INFO      agents.telegram_agent — [Goldscalper7860 | english | UPDATE] rule-parsed (update) — None None
+12:13:12  INFO      agents.trade_executor — [Goldscalper7860] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:13:12  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:17:12  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:17:12  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:17:12  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:17:12  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:17:12  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:17:12  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:18:12  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:18:12  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:18:12  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:18:12  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:18:12  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:18:12  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:18:40  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:18:40  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+12:18:40  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+12:18:40  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+12:18:40  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:18:40  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+12:18:40  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+12:18:40  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+12:18:40  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:18:40  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:18:40  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:18:40  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:18:40  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:18:40  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:18:40  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:19:12  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:19:12  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:19:12  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:23:26  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+12:26:12  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — None XAUUSD
+12:26:12  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=None  note=rule-parsed (new_signal)
+12:26:12  WARNING   agents.trade_executor — open_trade: bad symbol/action — XAUUSD 
+12:26:31  INFO      telethon.client.updates — Got difference for channel 2166967422 updates
+12:26:46  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:26:46  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:26:46  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+12:27:12  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:27:12  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:27:12  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+12:28:13  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:28:13  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:28:13  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+12:32:33  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 121] The semaphore timeout period has expired
+12:32:33  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 121] The semaphore timeout period has expired
+12:32:33  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+12:32:33  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+12:32:33  INFO      telethon.network.connection.connection — <class 'OSError'> during disconnect: [WinError 121] The semaphore timeout period has expired
+12:32:39  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+12:32:58  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 121] The semaphore timeout period has expired
+12:32:58  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 121] The semaphore timeout period has expired
+12:32:58  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+12:32:58  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+12:32:58  INFO      telethon.network.connection.connection — <class 'OSError'> during disconnect: [WinError 121] The semaphore timeout period has expired
+12:33:08  WARNING   telethon.network.mtprotosender — Attempt 1 at connecting failed: TimeoutError: 
+12:33:19  WARNING   telethon.network.mtprotosender — Attempt 2 at connecting failed: TimeoutError: 
+12:33:30  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+12:43:13  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:43:13  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:43:13  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+12:52:13  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:52:13  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:52:13  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:53:26  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+12:53:26  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+12:53:26  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+12:53:26  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+12:53:26  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:53:26  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:53:26  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:53:26  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:53:26  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:53:26  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:53:26  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:53:26  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:53:27  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:53:27  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:53:27  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:53:27  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:53:27  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:53:27  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:53:27  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:53:27  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:53:27  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:53:27  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:53:27  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:53:27  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:54:13  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+12:54:13  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+12:54:13  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+12:54:14  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+12:56:31  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+13:01:13  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+13:01:13  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+13:01:13  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+13:03:13  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+13:03:13  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+13:03:13  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+13:03:13  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+13:03:13  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+13:03:13  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+13:04:13  INFO      agents.telegram_agent — [Goldscalper7860 | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+13:04:13  INFO      agents.trade_executor — [Goldscalper7860] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+13:04:13  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+13:26:32  INFO      telethon.client.updates — Got difference for account updates
+13:26:32  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+13:26:32  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:26:32  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:28:14  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:28:14  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+13:28:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:28:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:28:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+13:28:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:28:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:28:14  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+13:28:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:28:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:28:14  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+13:28:14  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+13:28:14  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+13:28:14  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:28:14  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+13:28:14  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+13:28:14  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+13:35:14  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+13:35:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+13:35:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:35:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+13:38:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:38:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+13:38:14  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+13:38:14  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — BUY None
+13:38:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=BUY  note=rule-parsed (update)
+13:38:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+13:38:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:38:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+13:38:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:38:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+13:38:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:38:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+13:38:14  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+13:38:14  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+13:38:14  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+13:41:32  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+13:56:32  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+15:09:15  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 1236] The network connection was aborted by the local system
+15:09:15  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 1236] The network connection was aborted by the local system
+15:09:15  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+15:09:15  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+15:09:15  INFO      telethon.network.connection.connection — <class 'ConnectionAbortedError'> during disconnect: [WinError 1236] The network connection was aborted by the local system
+15:09:15  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+15:09:15  WARNING   telethon.network.mtprotostate — Server resent the older message 7649768636854703105, ignoring
+15:09:15  INFO      telethon.client.updates — Got difference for account updates
+15:09:16  INFO      telethon.client.updates — Got difference for channel 1154874887 updates
+15:09:16  INFO      telethon.client.updates — Got difference for channel 1781480731 updates
+15:09:17  INFO      telethon.client.updates — Got difference for channel 1581783339 updates
+15:09:17  INFO      telethon.client.updates — Got difference for channel 2163272510 updates
+15:09:18  INFO      telethon.client.updates — Got difference for channel 1553353663 updates
+15:09:18  INFO      telethon.client.updates — Got difference for channel 1502638425 updates
+15:09:19  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+15:09:19  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:09:19  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+15:09:19  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:09:19  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:09:19  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+15:09:19  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+15:09:19  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+15:23:40  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+15:23:40  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+15:23:40  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+15:24:15  INFO      telethon.client.updates — Got difference for account updates
+15:24:15  INFO      telethon.client.updates — Got difference for channel 1781480731 updates
+15:24:16  INFO      telethon.client.updates — Got difference for channel 1553353663 updates
+15:39:16  INFO      telethon.client.updates — Got difference for account updates
+15:48:41  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+15:48:41  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+15:48:41  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+15:48:41  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+15:49:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+15:49:41  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+15:49:41  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+15:54:16  INFO      telethon.client.updates — Got difference for account updates
+16:02:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:02:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:02:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:05:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:05:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:05:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:05:41  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+16:05:41  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+16:05:41  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+16:07:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+16:07:41  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+16:07:41  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+16:07:41  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:07:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:07:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:09:16  INFO      telethon.client.updates — Got difference for account updates
+16:09:16  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+16:11:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:11:41  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:11:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:11:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:15:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:15:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:15:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:16:41  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:16:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:16:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:18:41  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:18:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:18:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:19:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:19:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:19:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:19:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:19:41  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:24:16  INFO      telethon.client.updates — Got difference for account updates
+16:26:42  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:26:42  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:26:42  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:29:42  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:29:42  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:29:42  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:30:42  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+16:30:42  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+16:30:42  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+16:30:42  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:30:42  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+16:30:42  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+16:30:42  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+16:31:42  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+16:31:42  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:31:42  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:31:42  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:31:42  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:31:42  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:33:35  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:34:07  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:34:07  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:34:07  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:39:16  INFO      telethon.client.updates — Got difference for account updates
+16:39:42  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:39:42  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:39:42  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:42:40  INFO      telethon.client.updates — Got difference for channel 2566251163 updates
+16:48:42  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+16:48:42  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+16:48:42  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+16:49:42  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:50:23  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+16:54:16  INFO      telethon.client.updates — Got difference for account updates
+17:09:16  INFO      telethon.client.updates — Got difference for account updates
+17:24:16  INFO      telethon.client.updates — Got difference for account updates
+17:27:40  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:27:40  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:27:40  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:30:43  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:43  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:30:43  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:30:43  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+17:31:43  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:31:43  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:31:43  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+17:32:43  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:32:43  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:32:43  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:32:43  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:32:43  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:32:43  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:32:43  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:32:43  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:32:43  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:33:43  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:33:43  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:33:43  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:33:43  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:33:43  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:33:43  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:33:44  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:37:43  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+17:37:43  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+17:37:43  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+17:39:16  INFO      telethon.client.updates — Got difference for account updates
+17:54:16  INFO      telethon.client.updates — Got difference for account updates
+17:54:16  INFO      telethon.client.updates — Got difference for channel 1553353663 updates
+18:03:44  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:03:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:03:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:03:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:03:44  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:03:44  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+18:03:44  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+18:03:44  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+18:03:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+18:03:44  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+18:03:44  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+18:05:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:05:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:05:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:05:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:05:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:05:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:05:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+18:05:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:05:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:06:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+18:06:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:06:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:06:44  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:06:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:06:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+18:06:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:06:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:08:44  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:08:44  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:08:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+18:08:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:08:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:09:16  INFO      telethon.client.updates — Got difference for account updates
+18:09:17  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:09:17  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+18:09:17  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:09:17  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:09:17  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:09:17  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:09:17  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:10:44  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:14:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:14:44  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:14:44  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:32:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:32:44  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:32:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:32:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:32:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:32:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:32:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:32:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:32:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:32:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:32:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:33:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:33:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:33:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:33:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:33:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:34:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:37:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:37:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:37:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:37:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:38:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:38:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:38:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:38:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:38:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:38:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:39:17  INFO      telethon.client.updates — Got difference for channel 2391911584 updates
+18:39:17  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:39:17  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:39:17  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:39:17  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:39:38  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:39:38  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:39:38  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:39:38  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:40:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:40:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:40:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:40:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:40:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:40:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:40:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:40:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:40:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:40:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:40:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:40:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:41:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:41:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:41:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:41:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:41:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:41:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:41:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:41:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:41:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:41:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:41:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:42:40  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:42:40  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:42:40  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:42:41  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:42:41  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:42:41  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:42:41  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:43:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:43:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:43:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:43:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:43:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:43:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:43:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:43:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:43:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:43:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:43:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:43:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:43:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:44:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:44:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:44:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:44:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:44:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:44:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:44:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:44:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:44:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:44:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:44:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:44:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:44:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:45:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:45:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:45:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:45:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:46:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:46:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:46:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:46:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:46:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:46:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:46:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:46:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:46:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:46:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:46:45  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:46:45  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:46:45  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:46:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:47:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:47:46  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:47:46  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:47:46  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:47:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:47:46  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:47:46  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+18:48:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:48:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:48:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:48:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:48:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:48:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:49:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:49:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:50:45  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:50:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:50:45  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:50:45  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:50:45  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — None None
+18:50:46  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=  action=None  note=rule-parsed (new_signal)
+18:50:46  WARNING   agents.trade_executor — open_trade: bad symbol/action —  
+18:50:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:50:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None None
+18:50:46  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=  action=None  note=rule-parsed (update)
+18:50:46  INFO      agents.trade_executor — UPDATE: no symbol found — ignoring (rule-parsed (update))
+19:05:46  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+19:20:46  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+19:35:46  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+19:44:05  WARNING   telethon.network.connection.connection — Server closed the connection: [WinError 121] The semaphore timeout period has expired
+19:44:05  INFO      telethon.network.mtprotosender — Connection closed while receiving data: [WinError 121] The semaphore timeout period has expired
+19:44:05  INFO      telethon.network.mtprotosender — Closing current connection to begin reconnect...
+19:44:05  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+19:44:05  INFO      telethon.network.connection.connection — <class 'OSError'> during disconnect: [WinError 121] The semaphore timeout period has expired
+19:44:05  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+11:03:30  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+11:03:30  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+11:03:32  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3000.00 USD
+11:03:32  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+11:03:32  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+11:03:33  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+11:05:01  INFO      agents.telegram_agent — [TNTradingchannel | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+11:05:01  INFO      agents.trade_executor — [TNTradingchannel] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+11:05:01  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+11:05:24  INFO      agents.telegram_agent — [TNTradingchannel | english | IRRELEVANT] rule-parsed (irrelevant) — BUY None
+11:06:19  INFO      agents.telegram_agent — [TNTradingchannel | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+11:06:20  INFO      agents.trade_executor — [TNTradingchannel] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+11:06:20  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10027 AutoTrading disabled by client
+11:07:25  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+11:08:33  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+11:10:02  INFO      agents.telegram_agent — [TNTradingchannel | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+11:10:02  INFO      agents.trade_executor — [TNTradingchannel] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+11:10:02  ERROR     agents.trade_executor — \u274c Open FAILED SELL XAUUSD retcode=10027 AutoTrading disabled by client
+11:13:38  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+11:13:38  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+11:13:40  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3000.00 USD
+11:13:40  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+11:13:40  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+11:13:41  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+11:13:57  INFO      agents.telegram_agent — [TNTradingchannel | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+11:13:57  INFO      agents.trade_executor — [TNTradingchannel] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+11:13:57  INFO      agents.trade_executor — \u2705 Opened BUY XAUUSD ticket=9036628881 @ 4091.36000 lot=0.01
+11:13:57  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9036628881
+11:14:18  INFO      agents.telegram_agent — [TNTradingchannel | english | CLOSE] rule-parsed (close) — None XAUUSD
+11:14:18  INFO      agents.trade_executor — [TNTradingchannel] type=CLOSE  symbol=XAUUSD  action=None  note=rule-parsed (close)
+11:14:18  ERROR     agents.trade_executor — Close FAILED ticket #9036628881: (-2, 'Invalid "comment" argument')
+11:14:18  INFO      agents.telegram_agent — \U0001f512 Closed 0 position(s) on XAUUSD
+11:27:41  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+11:28:41  INFO      telethon.client.updates — Got difference for channel 2206862381 updates
+11:28:41  INFO      agents.telegram_agent — [ForexAuPro1 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+11:28:41  INFO      agents.trade_executor — [ForexAuPro1] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+11:28:41  WARNING   agents.trade_executor — \u26a0\ufe0f  Already have an open BUY on XAUUSD — skipping duplicate
+11:28:41  INFO      agents.telegram_agent — \u26a0\ufe0f  Skipped — already have open BUY on XAUUSD
+11:28:41  INFO      agents.telegram_agent — [ForexAuPro1 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+11:28:41  INFO      agents.trade_executor — [ForexAuPro1] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+11:28:41  WARNING   agents.trade_executor — \u26a0\ufe0f  Already have an open BUY on XAUUSD — skipping duplicate
+11:28:41  INFO      agents.telegram_agent — \u26a0\ufe0f  Skipped — already have open BUY on XAUUSD
+11:34:41  INFO      agents.telegram_agent — [ForexAuPro1 | french | IRRELEVANT] rule-parsed (irrelevant) — None None
+11:41:52  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+11:41:52  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+11:41:55  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3000.00 USD
+11:41:55  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+11:41:55  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+11:41:56  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+11:44:49  INFO      agents.telegram_agent — [TNTradingchannel | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+11:44:49  INFO      agents.trade_executor — [TNTradingchannel] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+11:44:49  WARNING   agents.trade_executor — \u26a0\ufe0f  Already have an open BUY on XAUUSD — skipping duplicate
+11:44:49  INFO      agents.telegram_agent — \u26a0\ufe0f  Skipped — already have open BUY on XAUUSD
+11:54:01  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+11:54:01  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+11:54:03  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 2999.30 USD
+11:54:03  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+11:54:03  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+11:54:04  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+11:54:38  INFO      agents.telegram_agent — [TNTradingchannel | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+11:54:38  INFO      agents.trade_executor — [TNTradingchannel] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+11:54:38  INFO      agents.trade_executor — \u2705 Opened BUY XAUUSD ticket=9037194063 @ 4091.45000 lot=0.01
+11:54:38  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9037194063
+12:03:11  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+12:03:11  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+12:03:13  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 2999.30 USD
+12:03:13  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+12:03:13  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+12:03:14  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+12:17:15  INFO      agents.telegram_agent — [Goldscalper7860 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:18:14  INFO      telethon.client.updates — Got difference for channel 2166967422 updates
+12:31:04  INFO      telethon.client.updates — Got difference for channel 2566251163 updates
+12:32:14  INFO      agents.telegram_agent — [ForexAuPro1 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:33:14  INFO      telethon.client.updates — Got difference for channel 2206862381 updates
+12:33:14  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | CLOSE] rule-parsed (close) — None None
+12:33:28  INFO      agents.telegram_agent — [ForexAuPro1 | arabic | UPDATE] rule-parsed (update) · break-even — None None
+12:34:45  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+12:34:45  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+12:34:47  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3001.85 USD
+12:34:47  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+12:34:47  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+12:34:47  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+12:35:48  INFO      agents.telegram_agent — [ForexAuPro1 | english | UPDATE] rule-parsed (update) · break-even — None None
+12:36:47  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:38:43  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:38:43  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:38:43  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:38:43  INFO      agents.trade_executor — \u2705 Opened SELL XAUUSD ticket=9038001782 @ 4084.01000 lot=0.01
+12:38:43  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9038001782
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+12:38:44  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+12:38:44  INFO      agents.trade_executor — \u2705 Opened SELL XAUUSD ticket=9038001888 @ 4084.23000 lot=0.01
+12:38:44  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9038001888
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — SELL None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:38:44  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:40:47  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None XAUUSD
+12:40:47  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=XAUUSD  action=None  note=rule-parsed (update)
+12:40:47  INFO      agents.trade_executor — UPDATE: nothing actionable (no SL, no break-even) — ignoring
+12:40:47  INFO      agents.telegram_agent — \u270f\ufe0f  Updated 0 position(s) on None
+12:40:47  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None XAUUSD
+12:40:47  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=XAUUSD  action=None  note=rule-parsed (update)
+12:40:47  INFO      agents.trade_executor — UPDATE: nothing actionable (no SL, no break-even) — ignoring
+12:40:47  INFO      agents.telegram_agent — \u270f\ufe0f  Updated 0 position(s) on None
+12:44:10  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+12:44:10  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+12:45:06  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+12:45:06  INFO      agents.trade_executor — \u2705 Opened BUY XAUUSD ticket=9038126103 @ 4084.26000 lot=0.01
+12:45:06  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9038126103
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+12:45:06  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+12:45:06  INFO      agents.trade_executor — \u2705 Opened BUY XAUUSD ticket=9038126118 @ 4084.27000 lot=0.01
+12:45:06  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9038126118
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+12:45:06  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+12:46:55  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+12:46:59  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:24:43  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+17:24:43  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+17:24:46  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3001.33 USD
+17:24:46  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+17:24:46  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+17:24:46  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+17:26:46  INFO      telethon.client.users — Sleeping for 31s (0:00:31) on GetDialogsRequest flood wait
+17:26:46  INFO      telethon.client.users — Sleeping for 31s (0:00:31) on GetDialogsRequest flood wait
+17:26:46  INFO      telethon.client.users — Sleeping for 31s (0:00:31) on GetDialogsRequest flood wait
+17:26:46  INFO      telethon.client.users — Sleeping for 31s (0:00:31) on GetDialogsRequest flood wait
+17:26:48  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:26:48  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:26:48  INFO      agents.trade_executor — \u2705 Opened SELL XAUUSD ticket=9045883197 @ 4083.44000 lot=0.01
+17:26:48  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9045883197
+17:26:48  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:26:48  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:26:48  WARNING   agents.trade_executor — \u26a0\ufe0f  @malek_eldahab already has an open SELL on XAUUSD — skipping duplicate
+17:26:48  INFO      agents.telegram_agent — \u26a0\ufe0f  Skipped — already have open SELL on XAUUSD
+17:26:48  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:26:48  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:26:48  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:26:48  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:26:48  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:26:49  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:26:49  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:26:49  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:27:18  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:27:18  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:27:18  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:27:18  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:30:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:46  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:30:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:46  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:30:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:30:46  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:30:46  WARNING   agents.trade_executor — \u26a0\ufe0f  @malek_eldahab already has an open SELL on XAUUSD — skipping duplicate
+17:30:46  INFO      agents.telegram_agent — \u26a0\ufe0f  Skipped — already have open SELL on XAUUSD
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | english | UPDATE] rule-parsed (update) — None None
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:30:47  INFO      agents.telegram_agent — [malek_eldahab | english | NEW_SIGNAL] rule-parsed (new_signal) — SELL XAUUSD
+17:30:47  INFO      agents.trade_executor — [malek_eldahab] type=NEW_SIGNAL  symbol=XAUUSD  action=SELL  note=rule-parsed (new_signal)
+17:30:47  WARNING   agents.trade_executor — \u26a0\ufe0f  @malek_eldahab already has an open SELL on XAUUSD — skipping duplicate
+17:30:47  INFO      agents.telegram_agent — \u26a0\ufe0f  Skipped — already have open SELL on XAUUSD
+17:32:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:34:47  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:37:47  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+17:39:46  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+17:39:46  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — SELL None
+17:40:18  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+17:40:18  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+17:40:19  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3001.33 USD
+17:40:19  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+17:40:19  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+17:40:20  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+17:55:01  INFO      telethon.crypto.libssl — Failed to load SSL library: <class 'OSError'> (no library called "ssl" found)
+17:55:01  INFO      telethon.crypto.aes — cryptg module not installed and libssl not found, falling back to (slower) Python encryption
+17:55:02  INFO      agents.mt5_agent — MT5 connected — Nizar Hajouni (#107965736) | Balance: 3001.33 USD
+17:55:02  INFO      telethon.network.mtprotosender — Connecting to 149.154.167.92:443/TcpFull...
+17:55:02  INFO      telethon.network.mtprotosender — Connection to 149.154.167.92:443/TcpFull complete!
+17:55:03  INFO      agents.telegram_agent — Telegram connected. Watching: ['ForexAuPro1', 'malek_eldahab', 'Goldscalper7860', 'TNTradingchannel']
+18:20:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None XAUUSD
+18:20:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:20:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:20:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None XAUUSD
+18:20:05  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:20:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:20:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:20:05  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:21:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:21:04  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:21:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:21:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:22:03  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:22:03  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:22:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:22:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:23:03  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:23:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None XAUUSD
+18:23:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:23:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:23:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:24:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:24:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:24:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:24:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:24:57  INFO      agents.telegram_agent — [TNTradingchannel | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+18:24:57  INFO      agents.trade_executor — [TNTradingchannel] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+18:24:57  INFO      agents.trade_executor — \u2705 Opened BUY XAUUSD ticket=9046881963 @ 4080.55000 lot=0.01
+18:24:57  INFO      agents.telegram_agent — \u2705 Trade opened \u2192 ticket #9046881963
+18:25:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:25:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:25:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:26:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:26:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:26:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:26:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | UPDATE] rule-parsed (update) — None XAUUSD
+18:26:04  INFO      agents.trade_executor — [malek_eldahab] type=UPDATE  symbol=XAUUSD  action=None  note=rule-parsed (update)
+18:26:04  INFO      agents.trade_executor — UPDATE: nothing actionable (no SL, no break-even) — ignoring
+18:26:04  INFO      agents.telegram_agent — \u270f\ufe0f  Updated 0 position(s) on None
+18:27:04  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:27:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:27:04  INFO      agents.telegram_agent — [malek_eldahab | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:29:04  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:29:04  INFO      agents.telegram_agent — [malek_eldahab | arabic | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:35:04  INFO      agents.telegram_agent — [ForexAuPro1 | english | NEW_SIGNAL] rule-parsed (new_signal) — BUY XAUUSD
+18:35:04  INFO      agents.trade_executor — [ForexAuPro1] type=NEW_SIGNAL  symbol=XAUUSD  action=BUY  note=rule-parsed (new_signal)
+18:35:04  ERROR     agents.trade_executor — \u274c Open FAILED BUY XAUUSD retcode=10016 Invalid stops — Invalid SL/TP — too close to current price
+18:35:04  INFO      agents.telegram_agent — [ForexAuPro1 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:36:04  INFO      agents.telegram_agent — [ForexAuPro1 | english | IRRELEVANT] rule-parsed (irrelevant) — None None
+18:40:03  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:43:05  INFO      telethon.client.updates — Got difference for channel 1596475000 updates
+18:55:03  INFO      telethon.client.updates — Got difference for account updates

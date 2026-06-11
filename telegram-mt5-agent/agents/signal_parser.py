@@ -83,7 +83,7 @@ _TRADING_RE = re.compile(
 )
 
 
-def parse_signal(message: str, channel: str = "") -> dict:
+def parse_signal(message: str, channel: str = "", language: str | None = None) -> dict:
     """
     Classify and parse a Telegram message.
 
@@ -92,10 +92,13 @@ def parse_signal(message: str, channel: str = "") -> dict:
       language : arabic | french | english
       + symbol, action, entry, sl, tp1, tp2, tp3, note
 
-    If `channel` is provided, injects learned vocabulary into the prompt
-    so Claude recognises that channel's specific style.
+    Args:
+      channel  : if provided, injects that channel's learned vocabulary into
+                 the prompt so Claude recognises its specific style.
+      language : pre-detected language; if None it is detected here. Passing it
+                 avoids a redundant langdetect pass when the caller already knows.
     """
-    language = detect_language(message)
+    language = language or detect_language(message)
 
     # Skip obvious non-trading messages without burning API tokens
     if not _TRADING_RE.search(message):

@@ -10,7 +10,8 @@ from datetime import datetime, timezone
 import MetaTrader5 as mt5
 from dotenv import load_dotenv
 
-from database.db import fetch_recent_signals, upsert_position
+from database.db import (fetch_recent_signals, upsert_position,
+                         fetch_open_db_positions, mark_position_closed)
 from database.status import beat
 
 load_dotenv()
@@ -19,46 +20,118 @@ log = logging.getLogger(__name__)
 POLL_INTERVAL = 30  # seconds
 
 
+def _clean(key: str) -> str:
+    """Read an env var, stripping any inline `# comment` and whitespace."""
+    return os.environ.get(key, "").split("#")[0].strip()
+
+
 class MT5Agent:
     def __init__(self):
-        self.login = int(os.environ["MT5_LOGIN"])
-        self.password = os.environ["MT5_PASSWORD"]
-        self.server = os.environ["MT5_SERVER"]
+        self.login = int(_clean("MT5_LOGIN"))
+        self.password = _clean("MT5_PASSWORD")
+        self.server = _clean("MT5_SERVER")
 
     def connect(self) -> bool:
-        if not mt5.initialize():
-            beat("mt5", False, f"initialize() failed: {mt5.last_error()}")
-            log.error("MT5 initialize() failed: %s", mt5.last_error())
-            return False
-        ok = mt5.login(self.login, self.password, self.server)
+        # Strategy 1 — initialise WITH credentials (most reliable; lets the
+        # package log the running terminal into the right account directly).
+        ok = mt5.initialize(login=self.login, password=self.password,
+                            server=self.server)
+
+        # Strategy 2 — plain initialise (attach to running terminal), then login.
         if not ok:
-            beat("mt5", False, f"login failed: {mt5.last_error()}")
-            log.error("MT5 login failed: %s", mt5.last_error())
+            log.warning("initialize(with creds) failed: %s — trying attach+login",
+                        mt5.last_error())
+            if mt5.initialize():
+                ok = mt5.login(self.login, self.password, self.server)
+
+        if not ok:
+            err = mt5.last_error()
+            msg = self._explain_error(err)
+            beat("mt5", False, msg)
+            log.error("MT5 connect failed: %s — %s", err, msg)
             return False
+
         info = mt5.account_info()
-        beat("mt5", True, f"{info.name} | Balance: {info.balance:.2f}")
-        log.info("MT5 connected — %s | Balance: %.2f", info.name, info.balance)
+        if info is None:
+            beat("mt5", False, "Connected but account_info() is None — login mismatch")
+            log.error("account_info() returned None after connect")
+            return False
+
+        beat("mt5", True, f"{info.name} | Balance: {info.balance:.2f} {info.currency}")
+        log.info("MT5 connected — %s (#%d) | Balance: %.2f %s",
+                 info.name, info.login, info.balance, info.currency)
         return True
 
+    @staticmethod
+    def _explain_error(err) -> str:
+        """Turn an MT5 error tuple into a human-readable hint."""
+        code = err[0] if isinstance(err, (tuple, list)) else err
+        hints = {
+            -6:     "Authorization failed — wrong login/password/server, "
+                    "or the demo account expired. Verify you can log in manually "
+                    "in the MT5 terminal (File ▸ Login to Trade Account).",
+            -10003: "Terminal not found — open the MetaTrader 5 desktop app first.",
+            -10004: "No connection to trade server — check the server name.",
+        }
+        return hints.get(code, f"MT5 error {err}")
+
     def run(self):
-        if not self.connect():
-            beat("mt5", False, "Could not connect — check login/server in .env")
-            return
+        """Main loop — auto-reconnects on any failure, runs forever."""
+        RECONNECT_DELAY = 15   # seconds to wait before retry after a crash
 
         while True:
-            try:
-                self._sync_open()
-                self._sync_closed()
-                info = mt5.account_info()
-                if info:
+            # ── connect / reconnect ───────────────────────────────────────
+            if not self.connect():
+                beat("mt5", False, "Could not connect — retrying in 15 s")
+                log.warning("MT5 connect failed, retrying in %ds…", RECONNECT_DELAY)
+                time.sleep(RECONNECT_DELAY)
+                continue
+
+            # ── sync loop ─────────────────────────────────────────────────
+            while True:
+                try:
+                    # detect silent disconnect (terminal closed / network drop)
+                    info = mt5.account_info()
+                    if info is None:
+                        log.warning("MT5 account_info() returned None — reconnecting…")
+                        beat("mt5", False, "Lost connection — reconnecting")
+                        mt5.shutdown()
+                        break  # exit inner loop → reconnect
+
+                    self._sync_open()
+                    self._sync_closed()
+                    self._reconcile()
                     beat("mt5", True,
                          f"Balance: {info.balance:.2f} | Equity: {info.equity:.2f}")
-            except Exception as exc:
-                beat("mt5", False, str(exc))
-                log.exception("MT5 sync error: %s", exc)
-            time.sleep(POLL_INTERVAL)
+
+                except Exception as exc:
+                    beat("mt5", False, f"Sync error: {exc}")
+                    log.exception("MT5 sync error — will reconnect: %s", exc)
+                    mt5.shutdown()
+                    break  # exit inner loop → reconnect
+
+                time.sleep(POLL_INTERVAL)
 
     # ── internal ──────────────────────────────────────────────────────────────
+
+    def _reconcile(self):
+        """
+        Close any DB row whose ticket no longer exists in MT5 (SL/TP hit,
+        manual close in the terminal, etc.) so the dashboard never shows
+        phantom 'open' positions.
+        """
+        live = {p.ticket for p in (mt5.positions_get() or [])}
+        for r in fetch_open_db_positions():
+            ticket = r["ticket"]
+            if not ticket or ticket in live:
+                continue
+            profit = close_price = None
+            for d in (mt5.history_deals_get(position=ticket) or []):
+                if d.entry == mt5.DEAL_ENTRY_OUT:
+                    profit, close_price = d.profit, d.price
+            mark_position_closed(ticket, profit, close_price)
+            log.info("Reconciled: ticket #%d closed in MT5 (profit=%s)",
+                     ticket, profit)
 
     def _signal_map(self) -> dict:
         """Build symbol→signal_id map from recent signals for matching."""

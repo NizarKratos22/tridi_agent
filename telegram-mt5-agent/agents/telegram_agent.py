@@ -14,10 +14,11 @@ import logging
 from telethon import TelegramClient, events
 from dotenv import load_dotenv
 
-from agents.signal_parser import parse_signal
+from agents.signal_parser import parse_signal, detect_language
+from agents.rule_parser import parse_signal_rule
 from agents.trade_executor import handle_signal
 from agents.keyword_extractor import extract_and_store
-from database.db import insert_signal, archive_message
+from database.db import insert_signal, archive_message, get_setting
 from database.status import beat
 
 load_dotenv()
@@ -41,11 +42,13 @@ def _channels() -> list:
 
 class TelegramAgent:
     def __init__(self):
-        self.api_id   = int(os.environ["TELEGRAM_API_ID"])
-        self.api_hash = os.environ["TELEGRAM_API_HASH"]
+        self.api_id   = int(os.environ["TELEGRAM_API_ID"].split("#")[0].strip())
+        self.api_hash = os.environ["TELEGRAM_API_HASH"].split("#")[0].strip()
         self.phone    = os.environ["TELEGRAM_PHONE"].split("#")[0].strip()
         self.channels = _channels()
-        self.client   = TelegramClient("session_tridi", self.api_id, self.api_hash)
+        # absolute path → shares the SAME session file the dashboard signs into
+        session = os.path.join(os.path.dirname(os.path.dirname(__file__)), "session_tridi")
+        self.client   = TelegramClient(session, self.api_id, self.api_hash)
 
     async def start(self):
         try:
@@ -63,6 +66,22 @@ class TelegramAgent:
         await self.client.run_until_disconnected()
         beat("telegram", False, "Disconnected")
 
+    def _parse(self, msg: str, channel: str, language: str) -> dict:
+        """
+        Route to the parser chosen by the live 'parse_mode' setting.
+          manual  → rule/keyword parser (deterministic, free)
+          agentic → Claude parser; falls back to rules if it errors (e.g. no key)
+        """
+        mode = (get_setting("parse_mode", "manual") or "manual").lower()
+        if mode == "agentic":
+            try:
+                return parse_signal(msg, channel=channel, language=language)
+            except Exception as exc:
+                log.warning("Agentic parse failed (%s) — falling back to rules", exc)
+                beat("telegram", True, f"AI parse failed, used rules: {exc}")
+                return parse_signal_rule(msg, channel=channel, language=language)
+        return parse_signal_rule(msg, channel=channel, language=language)
+
     async def _handle(self, event):
         msg = event.message.message
         if not msg:
@@ -71,16 +90,16 @@ class TelegramAgent:
         chat = await event.get_chat()
         channel_name = getattr(chat, "username", None) or str(chat.id)
 
-        # ── archive raw message (always) ──────────────────────────────────
-        # detect language first so archive_message gets it right
-        from agents.signal_parser import detect_language
-        language_hint = detect_language(msg)
-        archive_message(channel_name, language_hint, msg)
+        # ── detect language ONCE, reuse for archive + parse ───────────────
+        language = detect_language(msg)
+        archive_message(channel_name, language, msg)
 
-        # ── parse & classify (with channel vocabulary context) ────────────
-        parsed   = parse_signal(msg, channel=channel_name)
+        # ── parse & classify — MODE decides which parser runs ─────────────
+        #   manual   → deterministic rule/keyword parser (no API key)
+        #   agentic  → Claude AI parser (needs ANTHROPIC_API_KEY)
+        parsed = self._parse(msg, channel_name, language)
         sig_type = parsed.get("type", "IRRELEVANT")
-        language = parsed.pop("language", "english")
+        parsed.pop("language", None)          # already captured above
         note     = parsed.get("note", "")
 
         # ── learn keywords from this message ──────────────────────────────
@@ -90,8 +109,10 @@ class TelegramAgent:
                  channel_name, language, sig_type,
                  note, parsed.get("action", ""), parsed.get("symbol", ""))
 
-        # ── always save to DB (except pure irrelevant noise) ──────────────
-        if sig_type != "IRRELEVANT" or parsed.get("symbol"):
+        # ── save to signals table only when actionable ───────────────────
+        # IRRELEVANT messages are already archived in raw_messages — no need
+        # to also clutter the signals table with fan comments.
+        if sig_type != "IRRELEVANT" and (parsed.get("symbol") or parsed.get("action")):
             signal_id = insert_signal(
                 channel=channel_name,
                 language=language,
@@ -122,7 +143,10 @@ class TelegramAgent:
 
         # Log outcome per type
         if sig_type == "NEW_SIGNAL":
-            if result.get("skipped"):
+            if result.get("enriched"):
+                log.info("📌 Follow-up SL/TP applied to %d open position(s) on %s",
+                         result.get("enriched"), result.get("symbol"))
+            elif result.get("skipped"):
                 log.info("⚠️  Skipped — already have open %s on %s",
                          result.get("action"), result.get("symbol"))
             else:

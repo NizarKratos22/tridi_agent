@@ -74,6 +74,20 @@ def init_db():
                 message     TEXT NOT NULL,
                 received_at TEXT NOT NULL
             );
+
+            -- Per-channel control: whether a channel's NEW signals open trades.
+            -- trade_enabled=0 → signals are still parsed/logged but NOT executed.
+            CREATE TABLE IF NOT EXISTS channel_config (
+                channel       TEXT PRIMARY KEY,
+                trade_enabled INTEGER DEFAULT 1,
+                added_at      TEXT NOT NULL
+            );
+
+            -- Global key/value app settings (e.g. parse_mode = manual|agentic).
+            CREATE TABLE IF NOT EXISTS app_settings (
+                key   TEXT PRIMARY KEY,
+                value TEXT
+            );
         """)
 
 
@@ -190,9 +204,14 @@ def upsert_position(ticket: int, data: dict):
             "SELECT id FROM positions WHERE ticket=?", (ticket,)
         ).fetchone()
         if exists:
+            # COALESCE keeps the recorded SL/TP when the caller passes None
+            # (the closed-deals sync can't know stops and was wiping them).
             conn.execute(
                 """UPDATE positions
-                   SET profit=?, status=?, sl=?, tp=?, close_price=?, closed_at=?
+                   SET profit=?, status=?,
+                       sl=COALESCE(?, sl), tp=COALESCE(?, tp),
+                       close_price=COALESCE(?, close_price),
+                       closed_at=COALESCE(?, closed_at)
                    WHERE ticket=?""",
                 (
                     data.get("profit"), data.get("status", "open"),
@@ -219,6 +238,27 @@ def upsert_position(ticket: int, data: dict):
 
 
 # ── dashboard queries ──────────────────────────────────────────────────────────
+
+def fetch_open_db_positions() -> list:
+    """Open positions as recorded by the bot (ticket + channel + symbol + side)."""
+    with get_conn() as conn:
+        return conn.execute(
+            "SELECT ticket, channel, symbol, action FROM positions WHERE status='open'"
+        ).fetchall()
+
+
+def mark_position_closed(ticket: int, profit=None, close_price=None):
+    """Mark a DB position closed (used when MT5 says it's gone)."""
+    with get_conn() as conn:
+        conn.execute(
+            """UPDATE positions
+               SET status='closed', closed_at=?,
+                   profit=COALESCE(?, profit),
+                   close_price=COALESCE(?, close_price)
+               WHERE ticket=?""",
+            (datetime.utcnow().isoformat(), profit, close_price, ticket),
+        )
+
 
 def fetch_all_positions():
     with get_conn() as conn:
@@ -254,3 +294,73 @@ def fetch_raw_message_count() -> dict[str, int]:
             "SELECT channel, COUNT(*) as cnt FROM raw_messages GROUP BY channel"
         ).fetchall()
     return {r["channel"]: r["cnt"] for r in rows}
+
+
+def fetch_recent_raw_messages(limit=60):
+    """Every message received (incl. non-signals) — newest first."""
+    with get_conn() as conn:
+        return conn.execute(
+            "SELECT channel, language, message, received_at "
+            "FROM raw_messages ORDER BY id DESC LIMIT ?", (limit,)
+        ).fetchall()
+
+
+# ── channel trade-config ────────────────────────────────────────────────────────
+
+def register_channel(channel: str, default_enabled: bool = True):
+    """Add a channel to the config table if it isn't there yet (no-op if present)."""
+    if not channel:
+        return
+    with get_conn() as conn:
+        conn.execute(
+            "INSERT OR IGNORE INTO channel_config (channel, trade_enabled, added_at) "
+            "VALUES (?, ?, ?)",
+            (channel, 1 if default_enabled else 0, datetime.utcnow().isoformat()),
+        )
+
+
+def set_channel_trade_enabled(channel: str, enabled: bool):
+    """Turn auto-trading on/off for a channel (registers it if new)."""
+    with get_conn() as conn:
+        conn.execute(
+            "INSERT INTO channel_config (channel, trade_enabled, added_at) "
+            "VALUES (?, ?, ?) "
+            "ON CONFLICT(channel) DO UPDATE SET trade_enabled=excluded.trade_enabled",
+            (channel, 1 if enabled else 0, datetime.utcnow().isoformat()),
+        )
+
+
+def is_channel_trade_enabled(channel: str) -> bool:
+    """True if the channel may open trades. Unknown channels default to enabled."""
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT trade_enabled FROM channel_config WHERE channel=?", (channel,)
+        ).fetchone()
+    return True if row is None else bool(row["trade_enabled"])
+
+
+def fetch_channel_config() -> list:
+    """All channels and their trade-enabled flag, alphabetical."""
+    with get_conn() as conn:
+        return conn.execute(
+            "SELECT channel, trade_enabled FROM channel_config ORDER BY channel"
+        ).fetchall()
+
+
+# ── app settings (key/value) ────────────────────────────────────────────────────
+
+def get_setting(key: str, default: str | None = None) -> str | None:
+    with get_conn() as conn:
+        row = conn.execute(
+            "SELECT value FROM app_settings WHERE key=?", (key,)
+        ).fetchone()
+    return row["value"] if row else default
+
+
+def set_setting(key: str, value: str):
+    with get_conn() as conn:
+        conn.execute(
+            "INSERT INTO app_settings (key, value) VALUES (?, ?) "
+            "ON CONFLICT(key) DO UPDATE SET value=excluded.value",
+            (key, value),
+        )
